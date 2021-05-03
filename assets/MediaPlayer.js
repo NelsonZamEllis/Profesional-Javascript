@@ -33,7 +33,11 @@ function MediaPlayer(config) {
 
   
   MediaPlayer.prototype.unmute = function() {
-    this.media.unmuted = false;
+    if (this.media.muted) {
+      this.media.muted = false;
+    } else {
+      this.media.muted = true;
+    }
   };
 
   export default MediaPlayer;
